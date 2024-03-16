@@ -2,7 +2,9 @@ package com.example.healam;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,11 +36,30 @@ public class LoginActivity extends AppCompatActivity {
                 String edUsername = username.getText().toString();
                 String edPassword = password.getText().toString();
 
+                Database db = new Database(getApplicationContext(), "Healthcare", null, 1);
+
+
                 if(edUsername.length()==0||edPassword.length()==0){
                     Toast.makeText(getApplicationContext(), "please fill in your details", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(getApplicationContext(), "login sucessful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    if(db.login(edUsername, edPassword)==1){
+                        Toast.makeText(getApplicationContext(), "login sucessful", Toast.LENGTH_SHORT).show();
+
+                        /* save the username in a small memory so we can display that on the home page.
+                        when the user logs in, this we are going to use shared preferences
+                         */
+
+                        SharedPreferences sh = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sh.edit();
+                        editor.putString("username", edUsername);
+                        editor.apply();
+
+                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    }else {
+                        Toast.makeText(getApplicationContext(), "invalid username or password", Toast.LENGTH_SHORT).show();
+
+                    }
+
                 }
             }
         });

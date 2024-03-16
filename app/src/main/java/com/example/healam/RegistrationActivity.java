@@ -26,9 +26,9 @@ public class RegistrationActivity extends AppCompatActivity {
         edContact = findViewById(R.id.editTextPhoneNumber);
         edPassword = findViewById(R.id.editTextSignupPassword);
         edConfirmPassword = findViewById(R.id.editTextTextConfirmPassword);
-
         login = findViewById(R.id.textViewLogin);
         SignupBtn = findViewById(R.id.buttonSignup);
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,17 +46,23 @@ public class RegistrationActivity extends AppCompatActivity {
                 String password = edPassword.getText().toString();
                 String passwordconfirm = edConfirmPassword.getText().toString();
 
+                Database db = new Database(getApplicationContext(), "Healthcare", null, 1);
+
+
                 if ((username.length()==0||email.length()==0||contact.length()==0||password.length()==0||passwordconfirm.length()==0)){
                     Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
                 }else {
                     if(passwordconfirm.compareTo(passwordconfirm)==0){
                         if (isValid(password)){
+                            db.register(username, email, contact, password);
                             Toast.makeText(getApplicationContext(), "Signup sucessfull", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegistrationActivity.this, HomeActivity.class));
+                            startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
                         }else {
                             Toast.makeText(getApplicationContext(), "password must contain atleast 8 characters including  a letter, a digit and a sysmbol", Toast.LENGTH_SHORT).show();
                         }
-                    }else {
+                    } else if (contact.length()<8) {
+                        Toast.makeText(getApplicationContext(),"enter a valid phone numbe", Toast.LENGTH_SHORT).show();
+                    } else {
                         Toast.makeText(getApplicationContext(), "password and confirm password not thesame", Toast.LENGTH_SHORT).show();
 
                     }
