@@ -7,4 +7,5 @@
     <color name="grey_yellow">#f0c16e</color>
     <color name="fair_color">#eec0aa</color>
     <color name="indigo">#561536</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>
