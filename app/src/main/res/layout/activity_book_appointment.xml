@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey_yellow"
     tools:context=".BookAppointmentActivity">
 
     <TextView
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Book Appointment"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -156,7 +158,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="8dp"
         android:text="25/04/2024"
-        android:textColor="@color/grey_yellow"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonBookAppointment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
@@ -180,7 +182,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="10:00"
-        android:textColor="@color/grey_yellow"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonBookAppointment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.871"
@@ -196,7 +198,7 @@
         android:backgroundTint="#00FFFFFF"
         android:drawableLeft="@drawable/left_arrow"
         android:text="back"
-        android:textColor="@color/grey_yellow"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="1.0"

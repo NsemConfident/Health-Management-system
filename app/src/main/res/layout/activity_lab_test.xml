@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".DoctorDetailActivity">
+    tools:context=".LabTestActivity">
 
     <TextView
         android:id="@+id/textViewDDName"
@@ -35,27 +34,50 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewDDName" />
 
     <ListView
-        android:id="@+id/listViewDD"
+        android:id="@+id/listViewLT"
         android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewDDtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <Button
         android:id="@+id/buttonLTBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="28dp"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewDD"
+        app:layout_constraintVertical_bias="0.252" />
+
+    <Button
+        android:id="@+id/buttonLTGotocard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO TO CARD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLTBack"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listViewDD"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.44" />
 
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lab Test and Package"
+        android:textColor="@color/indigo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDDtitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

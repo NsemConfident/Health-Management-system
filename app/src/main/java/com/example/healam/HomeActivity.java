@@ -39,5 +39,14 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+        CardView labTest = findViewById(R.id.cardLabTest);
+        labTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"lab test clicked", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, LabTestActivity.class));
+            }
+        });
     }
 }
