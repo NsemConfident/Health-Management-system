@@ -27,7 +27,7 @@ public class RegistrationActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.editTextAppFees);
         edConfirmPassword = findViewById(R.id.editTextTextConfirmPassword);
         login = findViewById(R.id.textViewLogin);
-        SignupBtn = findViewById(R.id.buttonBookAppointment);
+        SignupBtn = findViewById(R.id.buttoncheckout);
 
 
         login.setOnClickListener(new View.OnClickListener() {

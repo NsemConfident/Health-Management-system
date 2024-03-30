@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,15 +30,15 @@ public class BookAppointmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_appointment);
 
-        back = findViewById(R.id.buttonAppback);
+        back = findViewById(R.id.buttonCartBack);
         tv = findViewById(R.id.textViewAppTitle);
         ed1 = findViewById(R.id.editTextAppName);
         ed2 = findViewById(R.id.editTextAppAddress);
         ed3 = findViewById(R.id.editTextAppPhoneNumber);
         ed4 = findViewById(R.id.editTextAppFees);
-        dateButton = findViewById(R.id.buttonAppDate);
-        timeButton = findViewById(R.id.buttonAppTime);
-        btnBook = findViewById(R.id.buttonBookAppointment);
+        dateButton = findViewById(R.id.buttonCartDatePicker);
+        timeButton = findViewById(R.id.buttonCartTimePicker);
+        btnBook = findViewById(R.id.buttoncheckout);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

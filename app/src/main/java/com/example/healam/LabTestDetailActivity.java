@@ -52,10 +52,12 @@ public class LabTestDetailActivity extends AppCompatActivity {
                 String product = tvPackageName.getText().toString();
                 float price = Float.parseFloat(intent.getStringExtra("text3").toString());
                 Database db = new Database(getApplicationContext(), "healthcare", null, 1);
+
+
                 if (db.checkCard(username, product)==1){
                     Toast.makeText(getApplicationContext(),"product already added", Toast.LENGTH_SHORT).show();
                 }else {
-                    db.addCart(username,product,price,"Lab");
+                    db.addCart(username,product,price,"lab");
                     Toast.makeText(getApplicationContext(),"product added to cart", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LabTestDetailActivity.this, LabTestActivity.class));
                 }

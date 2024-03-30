@@ -47,7 +47,7 @@ public class LabTestActivity extends AppCompatActivity {
     HashMap<String, String> item;
     ArrayList list;
     SimpleAdapter sa;
-    Button btnGoToCard, btnBAck;
+    Button btnGoToCart, btnBAck;
     ListView listView;
 
     @Override
@@ -55,7 +55,7 @@ public class LabTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_test);
 
-        btnGoToCard = findViewById(R.id.buttonLTGotocard);
+        btnGoToCart = findViewById(R.id.buttonLTGotocard);
         btnBAck = findViewById(R.id.buttonLTBack);
         listView = findViewById(R.id.listViewLT);
 
@@ -91,6 +91,14 @@ public class LabTestActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+        btnGoToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LabTestActivity.this, CartLabActivity.class));
+            }
+        });
+
     }
 
 }
