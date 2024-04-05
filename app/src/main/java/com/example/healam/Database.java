@@ -86,8 +86,8 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList getCartData(String username, String ordertype){
-        ArrayList<String> arr = new ArrayList<>();
+    public ArrayList<String> getCartData(String username, String ordertype){
+        ArrayList<String> arr = new ArrayList<String>();
         SQLiteDatabase db = getReadableDatabase();
         String str[] = new String[2];
         str[0] = username;
@@ -98,12 +98,12 @@ public class Database extends SQLiteOpenHelper {
                 String product = c.getString(1);
                 String price = c.getString(2);
                 arr.add(product);
-                arr.add("$"+price);
+                arr.add(price);
             }while (c.moveToNext());
         }
+        c.close();
         db.close();
-        return arr;
-
-
+        return(arr);
     }
+
 }

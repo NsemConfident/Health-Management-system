@@ -126,25 +126,21 @@
         android:id="@+id/textViewCartTotalPrice"
         android:layout_width="222dp"
         android:layout_height="26dp"
-        android:layout_marginTop="40dp"
         android:text="Total Cost: 2094$"
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCartMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/listViewCart" />
 
-    <EditText
-        android:id="@+id/editTextCartMultiLine"
-        android:layout_width="302dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+    <ListView
+        android:id="@+id/listViewCart"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
